@@ -1,0 +1,8 @@
+{
+  "name": "eslint-plugin-svelte-inline-compile",
+  "main": "index.js",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "svelte": ">=3.38.3"
+  }
+}

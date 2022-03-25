@@ -6,9 +6,13 @@ module.exports = {
     "plugin:jest-dom/recommended",
     "plugin:testing-library/dom",
     "prettier",
+    "plugin:svelte-inline-compile/recommended"
   ],
   plugins: ["jest", "jest-dom", "svelte3", "testing-library"],
-  overrides: [{ files: ["*.svelte"], processor: "svelte3/svelte3" }],
+  overrides: [
+    { files: ["*.svelte"], processor: "svelte3/svelte3" },
+    { files: ["**/*.test.js"], globals: { svelte: "readonly" } }
+  ],
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2019,

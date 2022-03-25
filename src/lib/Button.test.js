@@ -3,15 +3,15 @@ import userEvent from "@testing-library/user-event";
 import Button from "./Button.svelte";
 
 test("renders a button", async () => {
-  render(Button);
+  render(svelte`<Button>Click me</Button>`);
 
   expect(screen.getByRole("button")).toHaveTextContent("Click me");
 });
 
 test("triggers an event when clicked", () => {
-  const { component } = render(Button);
   const callback = jest.fn();
-  component.$on("click", callback);
+
+  render(svelte`<Button on:click={callback} />`);
 
   userEvent.click(screen.getByRole("button"));
 
